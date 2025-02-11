@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { z } from "zod";
+import Link from "next/link";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -97,6 +98,17 @@ export const SignInCard = () => {
           <FaGithub className="mr-2 size-5" />
           Login with GitHub
         </Button>
+      </CardContent>
+      <div className="px-7">
+        <DottedSeparator />
+      </div>
+      <CardContent className="p-7 flex items-center justify-center">
+        <p className="text-xs">
+          Don&apos;t have an account?&nbsp;
+          <Link href="/sign-up" className="text-blue-700">
+            Sign up
+          </Link>
+        </p>
       </CardContent>
     </Card>
   );
